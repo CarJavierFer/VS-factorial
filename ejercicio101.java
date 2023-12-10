@@ -18,7 +18,7 @@ public class ejercicio101 {
         for (i=1;i<x+1;i++){
             fact=fact*i;
         }
-        System.out.println("el factorial del nº es: "+fact);
+        System.out.println("Muestrame el factorial del número: "+fact);
 
     }
 }
