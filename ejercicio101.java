@@ -7,18 +7,40 @@ import java.util.Scanner;
  * Algoritmo que permita obtener el factorial de un número dado
  */
 
-public class ejercicio101 {
+public class Factorial {
+
     
-    public static void main(String []args){
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
 
-        Scanner entrada = new Scanner (System.in);
-        System.out.println("ingrese numero");
-        int x = entrada.nextInt();
-        int fact=1; int i=0;
-        for (i=1;i<x+1;i++){
-            fact=fact*i;
+        // Solicitar al usuario que ingrese un número
+        System.out.print("Ingrese un número para calcular su factorial: ");
+        int numero = scanner.nextInt();
+
+        // Calcular el factorial del número ingresado
+        long factorial = calcularFactorial(numero);
+
+        // Mostrar el resultado
+        System.out.println("El factorial de " + numero + " es: " + factorial);
+
+        scanner.close();
+    }
+
+    // Método para calcular el factorial de un número
+    public static long calcularFactorial(int n) {
+        if (n < 0) {
+            System.out.println("El factorial no está definido para números negativos.");
+            return -1; // Valor indicativo de un resultado no válido
         }
-        System.out.println("Muestrame el factorial del número: "+fact);
 
+        long resultado = 1;
+        for (int i = 1; i <= n; i++) {
+            resultado *= i;
+        }
+
+        return resultado;
     }
 }
+
+  
